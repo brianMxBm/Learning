@@ -17,12 +17,12 @@ var maxSubArray = function (nums) {
     // If the current subarray sum becomes negative, reset it to 0
     if (currentSum < 0) {
       currentSum = 0;
+
+      currentSum += nums[i]; // Add the current element to the current subarray sum
+
+      // Update maxSum to hold the maximum sum found so far
+      maxSum = Math.max(maxSum, currentSum);
     }
-
-    currentSum += nums[i]; // Add the current element to the current subarray sum
-
-    // Update maxSum to hold the maximum sum found so far
-    maxSum = Math.max(maxSum, currentSum);
   }
 
   return maxSum; // Return the maximum subarray sum

@@ -1,4 +1,4 @@
-//leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
+//https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
 
 /**
  * @param {number[]} prices
@@ -7,7 +7,7 @@
 
 //@SEE: With this solution we get a time complexity of O(n) since in every case we hae to check the entire array.
 
-https: var maxProfit = function (prices) {
+var maxProfit = function (prices) {
   let buyPrice = prices[0];
   let profit = 0;
 
