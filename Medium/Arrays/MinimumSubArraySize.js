@@ -12,8 +12,11 @@
  */
 
 /*
+@SEE: In this solution we find the smallest possible window for the target value, this is done by calculating starting and ending values for the window and determining 
+the best way to find a smaller sized window once our sum is greater than or equal to the given target. Then all we do is get the smaller window size, slide our window by removing
+the value from the start and increasing our windowStart shifting our window.
 
-
+O(n) solution.
 */
 
 var minSubArrayLen = function (target, nums) {
