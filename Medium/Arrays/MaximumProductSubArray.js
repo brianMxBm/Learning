@@ -14,9 +14,6 @@ currentMin keeps track of the minimum product of the subarray ending at the curr
 result tracks the largest product found during the iteration.
 
 We handle the effect of negative numbers by swapping currentMax and currentMin when a negative number is encountered.
-
-
-
 */
 
 var maxProduct = function (nums) {

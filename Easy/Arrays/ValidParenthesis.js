@@ -1,4 +1,4 @@
-//leetcode.com/problems/valid-palindrome/description/
+//https://leetcode.com/problems/valid-palindrome/description/
 
 /**
  * @param {string} s
@@ -9,7 +9,7 @@
 when you have a closing one if it isn't equal to it's respecting closing character return false, keep iterating until stack is empty.
 */
 
-https: var isValid = function (s) {
+var isValid = function (s) {
   let validStack = [];
   for (let char of s) {
     if (char === "(" || char === "{" || char === "[") {

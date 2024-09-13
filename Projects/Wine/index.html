@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Store</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .product {
+        display: inline-block;
+        margin: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        width: 200px;
+        text-align: center;
+      }
+      .cart {
+        margin-top: 30px;
+      }
+      .cart ul {
+        list-style: none;
+        padding: 0;
+      }
+      .cart ul li {
+        padding: 5px 0;
+      }
+      .checkout {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Simple Web Store</h1>
+
+    <div id="products">
+      <div class="product" data-id="1" data-name="Product 1" data-price="10">
+        <h2>Product 1</h2>
+        <p>Price: $10</p>
+        <button onclick="addToCart(1)">Add to Cart</button>
+      </div>
+      <div class="product" data-id="2" data-name="Product 2" data-price="15">
+        <h2>Product 2</h2>
+        <p>Price: $15</p>
+        <button onclick="addToCart(2)">Add to Cart</button>
+      </div>
+      <div class="product" data-id="3" data-name="Product 3" data-price="20">
+        <h2>Product 3</h2>
+        <p>Price: $20</p>
+        <button onclick="addToCart(3)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="cart">
+      <h2>Your Cart</h2>
+      <ul id="cart-items">
+        <!-- Items will be added here -->
+      </ul>
+      <p>Total: $<span id="total">0</span></p>
+    </div>
+
+    <div class="checkout">
+      <button onclick="checkout()">Checkout</button>
+    </div>
+
+    <script>
+      // JavaScript for handling cart and checkout functionality
+
+      // List of products in the store
+      const products = [
+        { id: 1, name: "Product 1", price: 10 },
+        { id: 2, name: "Product 2", price: 15 },
+        { id: 3, name: "Product 3", price: 20 },
+      ];
+
+      // Shopping cart array to hold added items
+      let cart = [];
+
+      // Function to add a product to the cart
+      function addToCart(productId) {
+        const product = products.find((p) => p.id === productId);
+        cart.push(product);
+        renderCart();
+      }
+
+      // Function to render the cart items in the DOM
+      function renderCart() {
+        const cartItems = document.getElementById("cart-items");
+        const totalElement = document.getElementById("total");
+        cartItems.innerHTML = ""; // Clear previous cart items
+        let total = 0;
+
+        cart.forEach((item, index) => {
+          const li = document.createElement("li");
+          li.textContent = `${item.name} - $${item.price}`;
+          cartItems.appendChild(li);
+          total += item.price;
+        });
+
+        totalElement.textContent = total.toFixed(2);
+      }
+
+      // Function to handle checkout process
+      function checkout() {
+        if (cart.length === 0) {
+          alert("Your cart is empty!");
+          return;
+        }
+
+        let confirmationMessage = "You have purchased:\n";
+        cart.forEach((item) => {
+          confirmationMessage += `${item.name} - $${item.price}\n`;
+        });
+        confirmationMessage += `Total: $${
+          document.getElementById("total").textContent
+        }`;
+
+        alert(confirmationMessage);
+        cart = []; // Clear cart after checkout
+        renderCart();
+      }
+    </script>
+  </body>
+</html>

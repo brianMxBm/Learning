@@ -8,7 +8,7 @@ JavaScript utilizes a Call Stack which keeps track of the currently executing fu
 
 # Heap
 
-The heap is where JavaScript stores objects and dynamic memory allocation.. This is where objects and arrays are stored, because the call stack only deals with function calls not data..
+The heap is where JavaScript stores objects and dynamic memory allocation.This is where objects and arrays are stored, because the call stack only deals with function calls not data..
 
 # Queue:
 

@@ -1,0 +1,28 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+
+ul,
+ol {
+  list-style-position: inside;
+}
+
+.cardContainer {
+  height: 500;
+  width: 500;
+  align-items: center;
+  justify-content: center;
+  border: solid black 1px;
+  display: flex;
+  margin-top: 10;
+  flex-direction: column;
+}

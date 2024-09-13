@@ -10,6 +10,7 @@ and we utilize Max or Min depending on what the question asks, in this case the 
 and use a while loop to alter our window and remove the start of the window in the set while incrementing windowStart.
 We then in every iteration need to add the current letter, we then compute the windowSize.
 
+O(n) solution
 */
 
 var lengthOfLongestSubstring = function (s) {

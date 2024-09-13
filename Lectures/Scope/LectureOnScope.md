@@ -35,7 +35,6 @@ Locally scoped variables are variables that are declared inside of functions and
 Example of Local Scope:
 
 ```
-
 function printMessage() {
   var message = 'Hello, World!';
   console.log(message);

@@ -1,0 +1,12 @@
+body {
+  height: 100%;
+}
+
+.nav {
+  flex-direction: row;
+  flex: auto;
+}
+
+.nav_list {
+  flex-direction: row;
+}
